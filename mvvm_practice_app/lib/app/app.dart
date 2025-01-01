@@ -1,7 +1,9 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:mvvm_practice_app/presentation/theme_manager.dart';
+
+import 'package:mvvm_practice_app/presentation/resources/router_manager.dart';
+import 'package:mvvm_practice_app/presentation/resources/theme_manager.dart';
 
 
 class MyApp extends StatefulWidget {
@@ -24,11 +26,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+onGenerateRoute: RouteGenerator.getRoute,
+initialRoute: Routes.splashRoute,
       theme:getApplicationTheme(),
-      home:Scaffold(
-        appBar: AppBar(),
-      )
+   
     );
   }
 }
